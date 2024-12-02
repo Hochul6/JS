@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div id="content"></div>
+    <button id="btn">데이터 요청하기</button>
+
+    <script>
+        // 버튼을 클릭해서 API서버에게 데이터를 요청 -> 데이터를 리턴 -> 화면에 출력
+        $("#btn").on("click", ()=>{
+            $.ajax({
+                // 프로젝트 할 때는 url 값에 우리가 만든 백엔드의 경로를 작성
+                // 백엔드의 controller부분의 경로를 잘 파악하자!
+                url : "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=4dac2e3a430dc1332a6ad57520c0894c&targetDt=20241114",
+                // data : "보내줄 데이터" -> 클라이언트가 서버에세 보낼 데이터가 있을 때만 사용
+                success : (res) => {
+                    // 성공함수 안에는 반드시 데이터를 받아줄 매개변수 필요하다.
+                    console.log(res.boxOfficeResult.dailyBoxOfficeList[0].movieNm);
+                    console.log(res.boxOfficeResult.dailyBoxOfficeList[0].rank);
+                    let data = res.boxOfficeResult.dailyBoxOfficeList;
+                    let str = ""
+
+                    for(let i=0 ; i<data.length ; i++) {
+                        str += `
+                            <span>순위:</span>${data[i].rank}
+                            <span>영화제목:</span>${data[i].movieNm}
+                            <br>
+                        `
+                    }
+                    $("#content").append(str)
+                    
+                },
+                error : () => {
+                    alert("통신에 실패했습니다~");
+                }
+            })
+        })
+    </script>
+</body>
+</html>

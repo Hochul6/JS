@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>입력한 값을 h1 태그로 출력해보기</h1>
+    <input type="text" id="text" value="Hello!👔">
+    <button onclick="h1_tag()">h1태그로 인풋값 출력하기</button>
+    <div id="content"></div>
+    
+
+    <script>
+        // 1) 함수 제작 1개
+        const h1_tag = () => {
+            let data = document.getElementById("text").value;
+            document.getElementById("content").innerHTML = `<h1>${data}</h1>`;
+        }
+        // 2) 함수안에 로직 * input의 value 가져오기, div에 <h1>태그로 값을 넣어주기
+        
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="img" src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDEwMjBfMTU5%2FMDAxNzI5NDE4ODYwMDc1.cqe5Bwp37O6TtcqRg1_pqFgUGIBF2jb-OZVQaatFelEg.zRl0ywKrwvcBIBoFZpa8fmHf__j8HWXSVQpgIfbS61Ag.JPEG%2F37945500_MotionElements_pembroke-welsh-corgi-dog-puppy-on-white-background-j.jpg&type=a340">
+    <br>
+    <button id="btn">이미지 변경</button>
+
+    <script>
+        // 이미지태그의 src 경로를 수정
+        // 1) 함수 1개 제작
+        // 2) 함수를 리스너 방식으로 버튼과 연결
+        // 3) 함수안의 로직
+        // * 로직 작성할 때 = img 태그의 src를 변경
+        let img1 = "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDEwMjBfMTU5%2FMDAxNzI5NDE4ODYwMDc1.cqe5Bwp37O6TtcqRg1_pqFgUGIBF2jb-OZVQaatFelEg.zRl0ywKrwvcBIBoFZpa8fmHf__j8HWXSVQpgIfbS61Ag.JPEG%2F37945500_MotionElements_pembroke-welsh-corgi-dog-puppy-on-white-background-j.jpg&type=a340";
+        let img2 = "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA4MjhfMjEx%2FMDAxNzI0ODMxNTc1NTkz.cy3r9A2_-j7kImjP9OaRuRXAczCKxn0GhdDwt2CKv5Ug.sSZGOukdJYY-9wKfILk7ObEVr0O_Lw0bDqZ_pSKE114g.JPEG%2F5.jpg&type=a340";
+        let img = document.getElementById("img");
+
+        const change = () => {
+            if (img.src == img1) {
+                img.src = img2;
+            }else {
+                img.src = img1;
+            }
+        }
+
+        document.getElementById("btn").addEventListener("click", change);
+
+    </script>
+</body>
+</html>

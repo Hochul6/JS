@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        .normal {
+            background-color: white;
+            color: black;
+        }
+        .dark {
+            background-color: black;
+            color: white;
+        }
+
+    </style>
+</head>
+<body class="normal">
+    <h1>텍스트입니다~</h1>
+    <button id="btn">다크모드 실행하기!</button>
+    
+    <script>
+        // 버튼을 클릭했을 때 body의 클래스를 변경
+        $("#btn").on("click", ()=>{
+            // 만약에 바디가 class로 normal을 가지고 있다면 -> dark 넣어줘
+            // 반대로 바디가 class로 dark를 가지고 있다면 -> normal 넣어줘
+            if($("body").hasClass("normal")) {
+                $("body").removeClass("normal");
+                $("body").addClass("dark");
+                $("#btn").text("일반모드 실행하기!");
+            }else {
+                $("body").removeClass("dark");
+                $("body").addClass("normal");
+                $("#btn").text("다크모드 실행하기!");
+            }
+        })
+
+        // 실습정리
+        // 1) 디자인을 한번에 변경하는 경우에는 보통 CSS의 선택자를 변경(class)
+        // 2) 프론트엔드 개발은 반드시 사용자의 상식에 맞게 개발
+    </script>
+    
+</body>
+</html>

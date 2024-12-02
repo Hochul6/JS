@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="text" id="data" value="안녕">
+    <button onclick="print()">인풋값 출력</button>
+
+    <script>
+        // JS 에서 인풋 데이터 가져오는 방법
+        // * innerText = 열린 태그와 닫는 태그 사이에 있는 컨텐츠 출력
+        // * input 태그는 컨텐츠가 X -> value 속성에 값을 저장
+        // * value값을 꺼낼 때는 키값을 통해서 조회가 가능하다
+        const print = () => {
+            alert(document.getElementById("data").value)            
+        }
+    </script>
+</body>
+</html>

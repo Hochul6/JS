@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1 id="text">제이쿼리 접근법</h1>
+    <input type="text" id="input">
+
+    <script>
+        // 1) 요소 접근 방법
+        let js = document.getElementById("text");
+        let jq = $("#text");
+        console.log(js);
+        console.log(jq);
+
+        // 2) 컨텐츠 추출
+        document.getElementById("text").innerText;
+        $("#text").text();
+        $("#text").html();
+
+        // 3) 컨텐츠 수정
+        document.getElementById("text").innerText = "안녕";
+        $("#text").text("수정");
+        $("#text").html("<span>수정</span>");
+
+        // 4) 인풋태그의 값을 추출
+        document.getElementById("input").value;
+        $("#input").val();
+
+        // 5) 스타일 제어
+        // * 함수를 통해서 값을 여러개를 보낼 때 의미가 다르면 객체로 보낸다.
+        document.getElementById("text").style.color = "red";
+        $("text").css("color", "red");
+        $("text").css("fint-size", "100px");
+        $("text").css({color : "red", fontSize : "100px"});
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        #redBox {
+            background-color: red;
+        }
+
+        #blueBox {
+            background-color: blue;
+        }
+
+        #greenBox {
+            background-color: green;
+        }
+
+        #grayBox {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="redBox"></div>
+    <div id="blueBox"></div>
+    <div id="greenBox"></div>
+    <div id="grayBox"></div>
+
+    <button class="move">이동하기!</button>
+    <button class="radius">둥글게!</button>
+
+    <script>
+        // 각각의 div요소를 접근하기
+        // querySelector 메서드를 활용해서 나머지 요소의 정보를 가지고 오기
+        // blue, green, gray라는 변수에 넣어주기
+        let red = document.querySelector('#redBox');
+        let blue = document.querySelector('#blueBox');
+        let green = document.querySelector('#greenBox');
+        let gray = document.querySelector('#grayBox');
+        
+        // 버튼 요소에 접근하기
+        let move = document.querySelector('.move');
+        let radius = document.querySelector('.radius');
+
+        // 이벤트 연결하기
+        move.addEventListener('click', ()=>{
+            // 이동하기 버튼을 클릭했을 때 
+            // 파랑, 녹색, 회색 div 요소의 바깥+왼쪽 여백을 생성
+            // marginleft -> style에 먼저 접근하기
+            blue.style.marginLeft = '100px';
+            green.style.marginLeft = '200px';
+            gray.style.marginLeft = '300px';
+        })
+
+        // 이동하기 버튼 << 더블클릭했을 때, 원상태로 복귀
+        // 'dblclick' 이벤트 속성 사용하기
+        move.addEventListener('dblclick', ()=>{
+            blue.style.marginLeft = '0px';
+            green.style.marginLeft = '0px';
+            gray.style.marginLeft = '0px';
+        })
+
+        // 둥글게 버튼 클릭 시 div요소의 보더를 변경하기
+        let divList = document.querySelectorAll('div');
+        // querySelectorAll메서드 사용시 -> 반환데이터 타입 : 유사배열
+        // 유사배열은 모습은 배열 형태지만 배열 함수를 사용X
+        // ex) 배열함수 -> push, pop 등
+        for (let i=0 ; i<divList.length ; i++) {
+            console.log(divList[i])
+        }
+        
+        radius.addEventListener('click', ()=>{
+            for (let i=0 ; i<divList.length ; i++) {
+                divList[i].style.borderRadius = '0% 60%';
+                // divList[i].style.borderTopRightRadius = '50%';
+                // divList[i].style.borderBottomLeftRadius = '50%';
+
+        }
+            // red.style.borderRadius = '0px 60px';
+            // blue.style.borderRadius = '0px 60px';
+            // green.style.borderRadius = '0px 60px';
+            // gray.style.borderRadius = '0px 60px';
+        })
+
+        radius.addEventListener('dblclick', ()=>{
+            for (let i=0 ; i<divList.length ; i++) {
+                divList[i].style.borderRadius = '0%';
+                // divList[i].style.borderTopRightRadius = '0%';
+                // divList[i].style.borderBottomLeftRadius = '0%';
+
+        }
+            // red.style.borderRadius = '0px';
+            // blue.style.borderRadius = '0px';
+            // green.style.borderRadius = '0px';
+            // gray.style.borderRadius = '0px';
+        })      
+
+    </script>
+</body>
+</html>

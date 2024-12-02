@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // JS에서 주석을 작성하는 방법
+        /*
+        여러줄 주석을 작성하는 방법
+        */
+       // 반드시 JS를 작성하기 위해서는 <script>태그를 선언해야 한다!
+        // 출력문 3가지
+        // 1) 문서에 직접 출력하는 방식 -> document.write()
+        //  * 핵심 = document => 현재 내가 보고있는 HTML 파일
+        document.write("문서에 직접 출력하기!");
+        
+        // 2) 콘솔창에 값을 출력하는 방식 -> console.log()
+        // py print() / java syso()
+        // * 사용처 : 프론트와 백엔드가 데이터를 주고 받을 때 검증하는 창
+        // * 사용처 : 개발을 할 때 오류가 나면 반드시 콘솔창을 확인하자!
+        console.log("콘솔창에 출력하기!");
+        console.error("에러입니다");
+        console.warn("경고입니다.");
+
+        // 3) 사용자에게 알림창을 제공하는 방식 -> alert()
+        // * G-market에서 사용자가 마우스 우클릭 방지 -> 알림창
+        // alert("알림창 제공!");
+
+        // 출력문 우선순위 : console(개발자를 위한 출력창) > alert(사용자를 위한 출력창)
+
+        // 입력문 2가지
+        // 1) 사용자에게 직접 타이핑을 통해서 값을 입력받는 방식 -> prompt()
+        // * 매개변수 1번째는 입력내용 / 2번째는 입력 예시
+        // * 프론트엔드 개발은 반드시 사용자의 입장을 고려해야 한다 -> 친절한 페이지
+        // * 입력받은 데이터는 무조건 타입이 String 타입 -> 숫자가 필요한 경우에는 형변환
+        prompt("생년월일을 입력하세요!", "ex)19900101");
+
+        // 2) 사용자에게 확인 or 취소를 입력받는 방식 -> confirm()
+        // * 입력받은 데이터의 타입 Boolean -> 조건문과 연결하자!
+        confirm("삭제하시겠습니까?");
+
+    </script>
+</body>
+</html>

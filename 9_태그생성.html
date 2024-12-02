@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>클릭 한번 해볼까요?</h1>
+    <div id="area"></div>
+    <button onclick="h1()">h1태그 생성</button>
+    <button onclick="a()">a태그 생성</button>
+    <button onclick="ul()">ul태그 생성</button>
+
+    
+    <script>
+        let ultag = `
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JS</li>
+            </ul>`
+        // 1) 3개의 함수를 제작
+        // - 에로우펑션으로 제작할 것!
+        const h1 = () =>{
+            // h1함수가 실행이 되면, 비어있는 div태그안에 , h1태그로 생긴 글자를 넣자
+            document.getElementById("area").innerHTML = "<h1>DOM 활용하기</h1>"
+        }
+        const a = () =>{
+            document.getElementById("area").innerHTML = "<a href='#'>Google</a>"
+        }
+        const ul = () =>{
+            //document.getElementById("area").innerHTML = "<ul><li>HTML</li><li>CSS</li><li>JS</li></ul>"
+            // document.getElementById("area").innerHTML = `<ul>
+            //     <li>HTML</li>
+            //     <li>CSS</li>
+            //     <li>JS</li>
+            //  </ul>`
+            document.getElementById("area").innerHTML = ultag
+        }
+
+        // 2) 각각의 함수에 로직을 작성
+        // - ex)h1태그의 함수안에는 div태그의 컨텐츠로 <h1>태그를 넣어주기!
+        // - 개념 : innerHTML활용
+        // - 힌트 : 문서에서 아이디가 area요소를 가져온 후, innerHTML안에 <h1>값을 넣어줘!
+
+        // 3) 함수와 태그를 연결
+        // - 힌트 : 원하는 태그의 속성으로 onclick=만든 함수()
+    </script>
+
+
+</body>
+</html>

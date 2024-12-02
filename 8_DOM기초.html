@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="text">
+        <span>기본 텍스트 값</span>
+    </h1>
+
+    <span class="text2">복수 테스트</span>
+    <span class="text2">복수 테스트</span>
+    <span class="text2">복수 테스트</span>
+
+    <script>
+        /*
+        DOM(Document Object Model)
+         - 내가 작성한 HTML 코드를 태그, 속성, 컨텐츠 별로 따로따로 저장하는 개념
+         - Why? 특정 태그에게 접근해서 이벤트, 디자인을 부여하기 위해서
+         - 핵심 : document -> HTML 안에 존재하는 모든 데이터를 담고 있는 최상위 객체
+        */
+
+        // 1) 특정 요소에 접근
+        // 내가 보고있는 문서에서 아이디가 text인 요소를 가져와줘!
+        let h1 = document.getElementById("text");
+        console.log(h1);
+
+        // 2) 수집한 요소에서 컨텐츠만 추출
+        // innerHTML vs innerText
+        // 공통점 : 특정 요소안의 컨텐츠를 추출
+        // 차이점 : html은 태그를 인식 / Text는 태그를 인식하지 못한다.
+        // 사용처 : 순수하게 컨텐츠(텍스트)만 필요한 경우에는 innerText를 활용한다.
+        let html = h1.innerHTML;
+        let text = h1.innerText;
+        console.log("innerHTML :", html);
+        console.log("innerText :", text);
+
+        // 3) 수집한 요소의 컨텐츠를 수정
+        // 사용처 : 컨텐츠를 수정할 때, 태그에 변화가 필요하다면 innerHTML을 사용한다.
+        // 키포인트 : 값을 수정할 때는 키값에 =을 통해서 넣어준다.
+        // document.getElementById("text").innerText = "<p>변한 텍스트입니다!</p>";
+        document.getElementById("text").innerHTML = "<p>변한 텍스트입니다!</p>";
+        
+        // 4) 복수개의 요소를 수집
+        // 키포인트 : 복수개를 가져왔기 때문에, 배열처럼 사용이 가능하다.
+        // - 배열의 인덱스 개념 & 배열의 길이 개념
+        // - 배열의 함수는 사용이 불가능
+        // - 유사배열(HTMLCollection)
+        let span = document.getElementsByClassName("text2");
+        console.log(span);
+        // span의 텍스트 값을 변경
+        for(let i=0 ; i<span.length ; i++) {
+            span[i].innerText = "반복문으로 변경!";
+        }
+
+        // 유사배열을 배열처럼 사용하고 싶은 경우 -> 배열로 형변환
+        let arr = Array.from(span);
+        console.log(arr);
+    </script>
+</body>
+</html>

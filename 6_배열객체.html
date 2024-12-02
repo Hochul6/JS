@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 배열(리스트) vs 객체(딕셔너리)
+        // 1) 배열 = 여러개의 데이터를 담는 공간 => 같은 의미를 가진 데이터만 저장
+        // * 배열에서 데이터를 조회할 때는 인덱스를 활용하기 때문에
+        // * 배열을 만들 때는 반드시 배열의 이름이 중요하다!
+        let name = ["호철", "경민", "성훈", "희광", "은채"];
+        // 1. 배열에서 데이터를 조회 -> 인덱스를 활용
+        name[0]
+        name[1]
+        // 2. 배열의 길이 -> length
+        // 활용 2가지 = 1. 데이터의 개수 검증 / 2. 반복문 for문과 세트로 활용
+        // * 배열을 사용할 땐 반드시 for문과 함께 활용하자.
+        // for(let i=0 ; i<name.length ; i++) { }
+        name.length
+        // 3. 배열의 함수
+        // 배열의 인덱스 마지막에 데이터를 넣는 함수 = push
+        name.push("GTP");
+        // 배열의 특정 데이터가 들어가 있는지 검사하는 함수 = includes
+        name.includes("호철"); // True/False 값을 리턴
+        name.indexOf("성훈"); // index 번호를 리턴
+
+        // 객체 = 여러개의 데이터를 담는 공간 = 의미가 다른 데이터를 담는 공간(딕셔너리)
+        // * 데이터 통신에서 가장 많이 사용하는 타입
+        // ex) get 방식의 데이터 처리
+        let person = {
+            이름 : "호철",
+            나이 : "20",
+            학교 : ["a초", "b중", {성별 : "남고", 과 : ["문과", "이과"]}]
+        }
+        // 데이터 조회
+        // * 객체에서는 키값의 이름이 매우 중요하다.
+        // * 복잡한 객체 구조에서 데이터를 꺼내올 때 2가지만 기억하자.
+        // * 배열은 인덱스로 조회 / 객체는 키값으로 조회
+        person.이름
+        person.학교[2].과[0]
+    </script>
+</body>
+</html>

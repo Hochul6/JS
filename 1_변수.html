@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 변수 = 사용할 가치가 있고 정확한 데이터를 저장하는 공간
+        // 자바와 파이썬의 중간쯤에 있다고 생각하자!
+        // 자바스크립트에서는 변수를 만들 때 키워드가 필요하다!
+        // var 키워드는 변수명이 중복 -> 협업할 때 불편 -> 개발자가 요청(ECMA조직)
+        var num = 10;
+        var num = 5;
+
+        // let 키워드 => 변수를 만드는 키워드 => 변수명이 중복이 되지 않는다(권장사항)
+        let name = "호철";
+        // let name = "경민"; -> 오류발생!(변수명 중복 선언)
+
+        // let vs var
+        // 공통점 : 변수를 만드는 키워드 -> 하나의 변수에 다른 값을 재할당 가능
+        // 차이점 : let(변수명의 중복이 불가능) vs var(변수명의 중복이 가능)
+        // 사용처 : 개발(let을 활용하자!) / 오픈소스(api var로 작성되어 있다.)
+
+        // 상수(const) = 함수를 제작해서 넣을 때
+        // 특징 : 값을 한번 넣으면 재할당 불가능 / 이름의 중복도 불가능
+        const age = 10;
+        // const age=11; , age=11 -> 둘다 불가능
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 사용자에게 첫번째 숫자 입력 -> prompt() -> 사용자 편의성 고려
+        // let num1 = Number(prompt("첫번째 숫자 입력하세요"));
+        // 2. 사용자에게 두번째 숫자 입력 -> prompt() -> 사용자 편의성 고려
+        // let num2 = Number(prompt("두번째 숫자 입력하세요"));
+
+        // * 입력받은 후, 변수에 저장할 것        
+        let num1 = prompt("첫번째 숫자를 입력하세요");
+        let num2 = prompt("두번째 숫자를 입력하세요");
+        let sum_s = num1+num2;
+        let sum_n = Number(num1)+Number(num2);
+
+        // 3. 두개의 숫자를 더한 결과를 콘솔창에 출력(숫자+숫자)
+        console.log('num1과 num2를 더한 문자 값 : ',sum_s);
+        console.log('num1과 num2를 더한 숫자 값 : ',sum_n);
+
+        // 이번 실습 키포인트
+        // 1) 변수는 반드시 가치있는 데이터를 담자
+        // 2) 코드의 확장성을 고려하며 프로그래밍 하자
+    </script>
+</body>
+</html>

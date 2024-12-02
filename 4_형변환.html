@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 형변환
+        // 1) 문자를 숫자로 변형
+        // * 웹에서 사용자에게 입력받는 데이터(input, prompt)는 무조건 String 타입이다.
+        let num = "10";
+        // 1. 문자를 정수, 실수로 변환 -> 데이터 타입은 Number
+        let int = Number(parseInt(num));
+        let float = parseFloat(num);
+        // 2. 문자를 숫자로 변환
+        let number = Number(num);
+        console.log(num);
+        console.log(number);
+        // 3. 숫자를 문자로 변환
+        let num2 = 10;
+        let str = String(num2);
+    </script>
+</body>
+</html>
